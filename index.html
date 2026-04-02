@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Свадебное приглашение | Дмитрий & Елизавета</title>
+<title>Свадебное приглашение | Артём & София</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ----- ГЛОБАЛЬНЫЕ СТИЛИ + АДАПТИВНОСТЬ ----- */
@@ -12,11 +12,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     margin: 0;
     background: #ffffff;
@@ -24,28 +22,21 @@ body {
     color: #222;
     overflow-x: hidden;
 }
-
-/* контейнеры */
 .container {
     max-width: 500px;
     margin: auto;
     padding: 20px;
     text-align: center;
 }
-
-/* анимация появления */
 .fade-up {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s ease;
 }
-
 .fade-up.appear {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* линии */
 .line-top, .line-bottom {
     width: 120%;
     height: 80px;
@@ -150,7 +141,7 @@ body {
 .program h2 {
     font-family: 'Playfair Display', serif;
 }
-/* ----- АДАПТИВНЫЙ ТАЙМЛАЙН (улучшен) ----- */
+/* ----- АДАПТИВНЫЙ ТАЙМЛАЙН ----- */
 .timeline {
     position: relative;
     margin-left: 30px;
@@ -196,8 +187,7 @@ body {
     font-size: 14px;
     opacity: 0.9;
 }
-
-/* ----- ДРЕСС-КОД (белый фон) ----- */
+/* ----- ДРЕСС-КОД ----- */
 .dresscode {
     text-align: center;
     padding: 40px 20px;
@@ -233,8 +223,7 @@ body {
     width: 180px;
     display: block;
 }
-
-/* ----- ТАЙМЕР (без рамок) + адаптивность ----- */
+/* ----- ТАЙМЕР (без рамок) ----- */
 .countdown-block {
     text-align: center;
     padding: 40px 20px;
@@ -273,7 +262,6 @@ body {
     color: #5a3a2e;
     letter-spacing: 1px;
 }
-
 /* ----- АНКЕТА (RSVP) ----- */
 .rsvp {
     background: #b30000;
@@ -383,8 +371,7 @@ body {
     background: #ffe0e0;
     transform: scale(1.01);
 }
-
-/* ----- АДАПТИВНОСТЬ (мобильные, планшеты) ----- */
+/* ----- АДАПТИВНОСТЬ ----- */
 @media (max-width: 480px) {
     .container {
         padding: 16px;
@@ -395,7 +382,6 @@ body {
     .title {
         font-size: 22px;
     }
-    /* улучшенный адаптивный таймлайн */
     .timeline {
         margin-left: 15px;
         margin-right: 10px;
@@ -423,7 +409,6 @@ body {
     .event div:last-child {
         font-size: 12px;
     }
-    /* таймер */
     .countdown {
         gap: 12px;
     }
@@ -456,7 +441,6 @@ body {
         font-size: 18px;
     }
 }
-
 @media (min-width: 768px) {
     .container {
         max-width: 680px;
@@ -471,7 +455,6 @@ body {
         gap: 40px;
     }
 }
-
 @media (min-width: 1024px) {
     .timeline {
         max-width: 500px;
@@ -483,18 +466,18 @@ body {
 
 <div class="container fade-up">
     <div class="line-top"></div>
-    <div class="small">наша история</div>
-    <div class="names">ДМИТРИЙ & ЕЛИЗАВЕТА</div>
+    <div class="small">наша любовь</div>
+    <div class="names">АРТЁМ & СОФИЯ</div>
     <div class="photo">
-        <img src="пара.jpg" alt="Жених и невеста">
+        <img src="пара.jpg" alt="Артём и София">
     </div>
-    <div class="title">ДЕНЬ, О КОТОРОМ МЫ МЕЧТАЛИ</div>
+    <div class="title">САМЫЙ ВАЖНЫЙ ДЕНЬ</div>
     <div class="text">
-        С огромной радостью приглашаем вас разделить с нами один из самых
-        важных дней нашей жизни — день нашей свадьбы!
+        Сердце переполняется счастьем, когда мы думаем о предстоящем событии. 
+        Приглашаем вас стать частью нашей истории и разделить радость этого чудесного дня!
     </div>
     <div class="line-bottom"></div>
-    <div class="title">Октябрь</div>
+    <div class="title">Август</div>
     <div class="calendar">
         <div class="days">
             <div class="day-name">пн</div><div class="day-name">вт</div><div class="day-name">ср</div>
@@ -502,49 +485,53 @@ body {
             <div class="day-name">вс</div>
         </div>
         <div class="numbers">
-            <div class="day">6</div><div class="day">7</div><div class="day">8</div><div class="day">9</div>
-            <div class="day"><div class="heart">10</div></div>
-            <div class="day">11</div><div class="day">12</div>
+            <div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div>
+            <div class="day">14</div><div class="day"><div class="heart">15</div></div><div class="day">16</div>
         </div>
     </div>
 </div>
 
 <!-- МЕСТО -->
 <div class="container fade-up">
-    <div class="title">МЕСТО ПРОВЕДЕНИЯ</div>
+    <div class="title">МЕСТО ВСТРЕЧИ</div>
     <div class="card">
         <img src="ресторан.jpg" alt="Ресторан">
     </div>
     <div class="text">
-        Мы выбрали это место не случайно — оно наполнено особенной атмосферой
-        и станет частью наших тёплых воспоминаний.
+        Уютный загородный клуб с видом на озеро — именно здесь мы скажем «да» друг другу. 
+        Атмосфера уюта и красоты станет идеальным фоном для нашего торжества.
     </div>
-    <a href="#" class="button">ПОСМОТРЕТЬ НА КАРТЕ</a>
+    <a href="#" class="button">ОТКРЫТЬ КАРТУ</a>
 </div>
 
-<!-- ПРОГРАММА ДНЯ (адаптивный таймлайн) -->
+<!-- ПРОГРАММА ДНЯ -->
 <div class="program fade-up">
-    <h2>ПРОГРАММА ДНЯ</h2>
+    <h2>ПЛАН ДНЯ</h2>
     <div class="timeline">
         <div class="event">
-            <div class="time">15:00</div>
-            <div class="event-title">СБОР ГОСТЕЙ</div>
-            <div>Прошу взять с собой хорошее настроение</div>
+            <div class="time">14:30</div>
+            <div class="event-title">ВСТРЕЧА ГОСТЕЙ</div>
+            <div>Шампанское и живая музыка для создания настроения</div>
         </div>
         <div class="event">
-            <div class="time">16:00</div>
-            <div class="event-title">ЦЕРЕМОНИЯ</div>
-            <div>Момент, когда две истории становятся одной</div>
+            <div class="time">15:30</div>
+            <div class="event-title">ВЫЕЗДНАЯ ЦЕРЕМОНИЯ</div>
+            <div>Клятвы, обмен кольцами и первый поцелуй мужа и жены</div>
         </div>
         <div class="event">
-            <div class="time">17:00</div>
-            <div class="event-title">БАНКЕТ</div>
-            <div>Вкусная еда, тосты и смех</div>
+            <div class="time">16:30</div>
+            <div class="event-title">ФУРШЕТ И ФОТОСЕССИЯ</div>
+            <div>Легкие закуски, общение и памятные кадры</div>
+        </div>
+        <div class="event">
+            <div class="time">18:00</div>
+            <div class="event-title">СВАДЕБНЫЙ УЖИН</div>
+            <div>Праздничный банкет, тосты и танцы до утра</div>
         </div>
         <div class="event">
             <div class="time">23:00</div>
-            <div class="event-title">ЗАВЕРШЕНИЕ</div>
-            <div>Начало новой главы</div>
+            <div class="event-title">ЗАВЕРШЕНИЕ ВЕЧЕРА</div>
+            <div>Фейерверк и тёплые прощания до новых встреч</div>
         </div>
     </div>
 </div>
@@ -553,8 +540,8 @@ body {
 <div class="dresscode fade-up">
     <h2>ДРЕСС-КОД</h2>
     <p>
-        Мы очень старались создать целый образ дня — будем благодарны,
-        если Вы поддержите нашу палитру в своём наряде.
+        Мы будем рады, если вы поддержите цветовую гамму нашего дня в своих образах. 
+        Это поможет создать гармоничную и элегантную атмосферу.
     </p>
     <div class="dress-wrapper">
         <div class="palette">
@@ -568,12 +555,13 @@ body {
             <img src="дресс-код.jpg" alt="Примеры нарядов">
         </div>
     </div>
+    <!-- Надпись про белое платье удалена по запросу -->
 </div>
 
 <!-- ТАЙМЕР -->
 <div class="countdown-block fade-up">
-    <div class="subtitle">день свадьбы</div>
-    <h2>СОВСЕМ СКОРО</h2>
+    <div class="subtitle">до нашей свадьбы</div>
+    <h2>ОСТАЛОСЬ СОВСЕМ НЕМНОГО</h2>
     <div class="countdown" id="countdown">
         <div><span id="days">0</span><small>дней</small></div>
         <div><span id="hours">0</span><small>часов</small></div>
@@ -584,39 +572,39 @@ body {
 
 <!-- АНКЕТА -->
 <div class="rsvp fade-up">
-    <h2>АНКЕТА</h2>
+    <h2>ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</h2>
     <p class="desc">
-        Ваши ответы на вопросы очень помогут нам при организации свадьбы.<br><br>
-        Будем ждать ваш ответ.
+        Пожалуйста, ответьте на несколько вопросов — это очень поможет нам в организации праздника.<br><br>
+        С нетерпением ждём вашего ответа!
     </p>
     
-    <div class="question">СМОЖЕТЕ ЛИ ВЫ ПРИСУТСТВОВАТЬ НА ТОРЖЕСТВЕ?</div>
+    <div class="question">ВЫ СМОЖЕТЕ ПРИСУТСТВОВАТЬ?</div>
     <label class="radio">
         <input type="radio" name="visit">
         <span></span>
-        Я приду / Мы придем
+        Да, с радостью!
     </label>
     <label class="radio">
         <input type="radio" name="visit">
         <span></span>
-        Прийти не получится
+        К сожалению, нет
     </label>
     <label class="radio">
         <input type="radio" name="visit">
         <span></span>
-        Буду +1
+        Да, но с +1
     </label>
 
-    <div class="question">ВВЕДИТЕ ИМЯ И ФАМИЛИЮ</div>
+    <div class="question">ВАШЕ ИМЯ (И ИМЕНА ГОСТЕЙ)</div>
     <p class="small-text">
-        если вы будете парой или семьей, то внесите все имена и фамилии
+        Если вы планируете быть с партнёром или детьми, укажите всех, кто придёт.
     </p>
-    <input type="text" placeholder="Ваше имя" class="input" id="guestName">
+    <input type="text" placeholder="Например: Анна и Дмитрий" class="input" id="guestName">
 
-    <div class="question">ПРЕДПОЧТЕНИЯ ПО НАПИТКАМ:</div>
+    <div class="question">ПРЕДПОЧТЕНИЯ В НАПИТКАХ</div>
     <p class="small-text">можно выбрать несколько вариантов</p>
-    <label class="checkbox"><input type="checkbox" value="Вино красное"><span></span> Вино красное</label>
-    <label class="checkbox"><input type="checkbox" value="Вино белое"><span></span> Вино белое</label>
+    <label class="checkbox"><input type="checkbox" value="Красное вино"><span></span> Красное вино</label>
+    <label class="checkbox"><input type="checkbox" value="Белое вино"><span></span> Белое вино</label>
     <label class="checkbox"><input type="checkbox" value="Виски"><span></span> Виски</label>
     <label class="checkbox"><input type="checkbox" value="Водка"><span></span> Водка</label>
     <label class="checkbox"><input type="checkbox" value="Коньяк"><span></span> Коньяк</label>
@@ -628,15 +616,15 @@ body {
     </label>
     <input type="text" id="customDrinkText" class="custom-drink-input" placeholder="Напишите ваш вариант" style="display: none;">
 
-    <div class="question">ПОЖЕЛАНИЯ МОЛОДОЖЕНАМ</div>
-    <textarea rows="3" class="wishes-input" placeholder="Ваши тёплые слова, советы или пожелания..."></textarea>
+    <div class="question">ТЁПЛЫЕ СЛОВА ДЛЯ НАС</div>
+    <textarea rows="3" class="wishes-input" placeholder="Будем благодарны за ваши пожелания, советы или просто добрые слова..."></textarea>
 
     <button class="submit-btn" id="submitBtn">ОТПРАВИТЬ</button>
 </div>
 
 <script>
-// ТАЙМЕР
-const weddingDate = new Date("2026-10-10 15:00:00").getTime();
+// НОВАЯ ДАТА СВАДЬБЫ: 15 августа 2026 года, 15:30
+const weddingDate = new Date("2026-08-15 15:30:00").getTime();
 
 function updateTimer() {
     const now = new Date().getTime();
@@ -700,7 +688,7 @@ if (submitBtn) {
         }
         const drinksText = drinks.length ? drinks.join(', ') : 'не выбраны';
         const wishes = document.querySelector('.wishes-input')?.value.trim() || 'без пожеланий';
-        alert(`Спасибо, ${name}!\n\nВаш ответ: ${visitAnswer}\nНапитки: ${drinksText}\nПожелания: ${wishes}\n\nВаше подтверждение отправлено организаторам.`);
+        alert(`Спасибо, ${name}!\n\nВаш ответ: ${visitAnswer}\nЛюбимые напитки: ${drinksText}\nПожелания: ${wishes}\n\nВаше подтверждение успешно отправлено!`);
     });
 }
 </script>
