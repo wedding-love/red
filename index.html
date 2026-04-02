@@ -25,7 +25,7 @@ body {
     overflow-x: hidden;
 }
 
-/* основные контейнеры */
+/* контейнеры */
 .container {
     max-width: 500px;
     margin: auto;
@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 
-/* анимация появления при скролле */
+/* анимация появления */
 .fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -45,7 +45,7 @@ body {
     transform: translateY(0);
 }
 
-/* декоративные линии */
+/* линии */
 .line-top, .line-bottom {
     width: 120%;
     height: 80px;
@@ -187,11 +187,11 @@ body {
     font-size: 18px;
 }
 
-/* ----- ДРЕСС-КОД (фон белый, убрана надпись про невесту) ----- */
+/* ----- ДРЕСС-КОД (белый фон) ----- */
 .dresscode {
     text-align: center;
     padding: 40px 20px;
-    background: #ffffff;   /* изменено на белый */
+    background: #ffffff;
 }
 .dresscode h2 {
     font-family: 'Playfair Display', serif;
@@ -224,7 +224,7 @@ body {
     display: block;
 }
 
-/* ----- ТАЙМЕР ----- */
+/* ----- ТАЙМЕР (без рамок) ----- */
 .countdown-block {
     text-align: center;
     padding: 40px 20px;
@@ -241,29 +241,31 @@ body {
 .countdown {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     margin-top: 20px;
     flex-wrap: wrap;
 }
 .countdown div {
     text-align: center;
-    background: #faf4f0;
-    padding: 12px 8px;
-    border-radius: 12px;
-    min-width: 70px;
+    /* убраны фон, рамка, border-radius */
+    background: none;
+    padding: 0;
+    min-width: auto;
 }
 .countdown span {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
     color: #b30000;
+    display: inline-block;
 }
 .countdown small {
     display: block;
     font-size: 12px;
     color: #5a3a2e;
+    letter-spacing: 1px;
 }
 
-/* ----- АНКЕТА (RSVP) ----- */
+/* ----- АНКЕТА (RSVP) с новыми полями ----- */
 .rsvp {
     background: #b30000;
     color: white;
@@ -324,7 +326,7 @@ body {
     top: 2px;
     left: 2px;
 }
-.input {
+.input, .custom-drink-input, .wishes-input {
     width: 100%;
     padding: 12px 5px;
     background: transparent;
@@ -334,16 +336,46 @@ body {
     margin-bottom: 20px;
     font-size: 16px;
 }
-.input::placeholder {
+.input::placeholder, .custom-drink-input::placeholder, .wishes-input::placeholder {
     color: rgba(255,255,255,0.7);
+}
+.custom-drink-input {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.wishes-input {
+    margin-bottom: 25px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    padding: 10px;
+    resize: vertical;
 }
 .small-text {
     font-size: 13px;
     margin-bottom: 10px;
     opacity: 0.8;
 }
-
-/* ----- АДАПТИВНОСТЬ (мобильные, планшеты) ----- */
+/* кнопка отправки */
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: white;
+    color: #b30000;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+.submit-btn:hover {
+    background: #ffe0e0;
+    transform: scale(1.01);
+}
+/* ----- АДАПТИВНОСТЬ ----- */
 @media (max-width: 480px) {
     .container {
         padding: 16px;
@@ -360,12 +392,11 @@ body {
     .event-title {
         font-size: 16px;
     }
-    .countdown div {
-        min-width: 60px;
-        padding: 8px 4px;
+    .countdown {
+        gap: 15px;
     }
     .countdown span {
-        font-size: 22px;
+        font-size: 26px;
     }
     .dress-wrapper {
         flex-direction: column;
@@ -476,7 +507,7 @@ body {
     </div>
 </div>
 
-<!-- ДРЕСС-КОД (фон белый, убрана записка про белое платье) -->
+<!-- ДРЕСС-КОД (без упоминания белого платья) -->
 <div class="dresscode fade-up">
     <h2>ДРЕСС-КОД</h2>
     <p>
@@ -495,10 +526,9 @@ body {
             <img src="дресс-код.jpg" alt="Примеры нарядов">
         </div>
     </div>
-    <!-- блок .note полностью удалён по вашему запросу -->
 </div>
 
-<!-- ТАЙМЕР -->
+<!-- ТАЙМЕР (без фоновых рамок) -->
 <div class="countdown-block fade-up">
     <div class="subtitle">день свадьбы</div>
     <h2>СОВСЕМ СКОРО</h2>
@@ -510,13 +540,14 @@ body {
     </div>
 </div>
 
-<!-- АНКЕТА (RSVP) добавлена -->
+<!-- АНКЕТА (RSVP) с новыми полями -->
 <div class="rsvp fade-up">
     <h2>АНКЕТА</h2>
     <p class="desc">
         Ваши ответы на вопросы очень помогут нам при организации свадьбы.<br><br>
         Будем ждать ваш ответ.
     </p>
+    
     <div class="question">СМОЖЕТЕ ЛИ ВЫ ПРИСУТСТВОВАТЬ НА ТОРЖЕСТВЕ?</div>
     <label class="radio">
         <input type="radio" name="visit">
@@ -538,20 +569,34 @@ body {
     <p class="small-text">
         если вы будете парой или семьей, то внесите все имена и фамилии
     </p>
-    <input type="text" placeholder="Ваше имя" class="input">
+    <input type="text" placeholder="Ваше имя" class="input" id="guestName">
 
     <div class="question">ПРЕДПОЧТЕНИЯ ПО НАПИТКАМ:</div>
     <p class="small-text">можно выбрать несколько вариантов</p>
-    <label class="checkbox"><input type="checkbox"><span></span> Вино красное</label>
-    <label class="checkbox"><input type="checkbox"><span></span> Вино белое</label>
-    <label class="checkbox"><input type="checkbox"><span></span> Виски</label>
-    <label class="checkbox"><input type="checkbox"><span></span> Водка</label>
-    <label class="checkbox"><input type="checkbox"><span></span> Коньяк</label>
-    <label class="checkbox"><input type="checkbox"><span></span> Игристое</label>
+    <label class="checkbox"><input type="checkbox" value="Вино красное"><span></span> Вино красное</label>
+    <label class="checkbox"><input type="checkbox" value="Вино белое"><span></span> Вино белое</label>
+    <label class="checkbox"><input type="checkbox" value="Виски"><span></span> Виски</label>
+    <label class="checkbox"><input type="checkbox" value="Водка"><span></span> Водка</label>
+    <label class="checkbox"><input type="checkbox" value="Коньяк"><span></span> Коньяк</label>
+    <label class="checkbox"><input type="checkbox" value="Игристое"><span></span> Игристое</label>
+    
+    <!-- Свой вариант -->
+    <label class="checkbox">
+        <input type="checkbox" id="customDrinkCheckbox">
+        <span></span> Свой вариант
+    </label>
+    <input type="text" id="customDrinkText" class="custom-drink-input" placeholder="Напишите ваш вариант" style="display: none;">
+
+    <!-- Блок пожеланий -->
+    <div class="question">ПОЖЕЛАНИЯ МОЛОДОЖЕНАМ</div>
+    <textarea rows="3" class="wishes-input" placeholder="Ваши тёплые слова, советы или пожелания..."></textarea>
+
+    <!-- Кнопка отправки -->
+    <button class="submit-btn" id="submitBtn">ОТПРАВИТЬ</button>
 </div>
 
 <script>
-// ---------- ТАЙМЕР (дата свадьбы) ----------
+// ---------- ТАЙМЕР ----------
 const weddingDate = new Date("2026-10-10 15:00:00").getTime();
 
 function updateTimer() {
@@ -580,34 +625,58 @@ function updateTimer() {
 updateTimer();
 setInterval(updateTimer, 1000);
 
-// ---------- ПЛАВНАЯ АНИМАЦИЯ ПРИ ПРОКРУТКЕ (Intersection Observer) ----------
+// ---------- АНИМАЦИЯ ПРИ ПРОКРУТКЕ ----------
 const fadeElements = document.querySelectorAll('.fade-up');
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('appear');
-            // можно продолжить наблюдение, но после появления уже не нужно
             observer.unobserve(entry.target);
         }
     });
 }, { threshold: 0.15, rootMargin: "0px 0px -20px 0px" });
-
 fadeElements.forEach(el => observer.observe(el));
 
-// Дополнительно: плавный скролл для ссылок (если появится якорь)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href !== "#" && href !== "") {
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
+// ---------- ЛОГИКА ДЛЯ "СВОЕГО ВАРИАНТА" ----------
+const customCheckbox = document.getElementById('customDrinkCheckbox');
+const customInput = document.getElementById('customDrinkText');
+
+if (customCheckbox && customInput) {
+    customCheckbox.addEventListener('change', function() {
+        customInput.style.display = this.checked ? 'block' : 'none';
+        if (!this.checked) customInput.value = '';
     });
-});
+}
+
+// ---------- ОБРАБОТКА ОТПРАВКИ (демо-режим) ----------
+const submitBtn = document.getElementById('submitBtn');
+if (submitBtn) {
+    submitBtn.addEventListener('click', function() {
+        // собираем данные (просто для примера)
+        const name = document.getElementById('guestName')?.value || 'не указано';
+        const visitRadio = document.querySelector('input[name="visit"]:checked');
+        const visitAnswer = visitRadio ? visitRadio.parentElement.innerText.trim() : 'не выбран';
+        
+        const drinks = [];
+        document.querySelectorAll('.checkbox input[type="checkbox"]:checked').forEach(cb => {
+            if (cb.id !== 'customDrinkCheckbox') {
+                drinks.push(cb.value);
+            }
+        });
+        if (customCheckbox && customCheckbox.checked && customInput.value.trim() !== '') {
+            drinks.push(customInput.value.trim());
+        }
+        const drinksText = drinks.length ? drinks.join(', ') : 'не выбраны';
+        
+        const wishes = document.querySelector('.wishes-input')?.value.trim() || 'без пожеланий';
+        
+        // вывод уведомления (имитация отправки)
+        alert(`Спасибо, ${name}!\n\nВаш ответ: ${visitAnswer}\nНапитки: ${drinksText}\nПожелания: ${wishes}\n\nВаше подтверждение отправлено организаторам.`);
+        
+        // опционально: очистить форму или оставить как есть
+        // здесь можно добавить отправку на сервер, но в рамках демо просто алерт
+    });
+}
 </script>
 </body>
 </html>
