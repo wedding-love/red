@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    background: #ffffff; /* чисто белый */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Текст */
+#text {
+    font-family: 'Special Elite', monospace;
+    font-size: 32px;
+    letter-spacing: 2px;
+    border-right: 2px solid black;
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Сердце */
+#heart {
+    margin-top: 40px;
+    width: 140px;
+    height: 140px;
+}
+
+path {
+    fill: none;
+    stroke: #800020; /* бордовый */
+    stroke-width: 2.5;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    opacity: 0;
+}
+
+/* Анимация */
+.draw {
+    animation: draw 2.5s ease forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+    #text {
+        font-size: 24px;
+    }
+    #heart {
+        width: 110px;
+        height: 110px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="text"></div>
+
+<svg id="heart" viewBox="0 0 100 100">
+    <path id="heartPath" d="M50 30 
+        C50 15, 80 15, 80 35
+        C80 55, 50 75, 50 75
+        C50 75, 20 55, 20 35
+        C20 15, 50 15, 50 30 Z"/>
+</svg>
+
+<script>
+const text = "Она сказала да...";
+let i = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        document.getElementById("text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+    } else {
+        setTimeout(drawHeart, 500);
+    }
+}
+
+function drawHeart() {
+    document.getElementById("heartPath").classList.add("draw");
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
