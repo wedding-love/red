@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -141,7 +142,7 @@ body {
 .program h2 {
     font-family: 'Playfair Display', serif;
 }
-/* ----- АДАПТИВНЫЙ ТАЙМЛАЙН ----- */
+/* ----- ТАЙМЛАЙН (без кружочков) ----- */
 .timeline {
     position: relative;
     margin-left: 30px;
@@ -163,16 +164,7 @@ body {
     position: relative;
     padding-left: 20px;
 }
-.event::before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-}
+/* КРУЖОЧКИ УДАЛЕНЫ — стиль .event::before полностью убран */
 .time {
     font-weight: bold;
     font-size: 1rem;
@@ -371,6 +363,56 @@ body {
     background: #ffe0e0;
     transform: scale(1.01);
 }
+
+/* ----- НОВЫЕ СТИЛИ ДЛЯ БЛОКОВ "НАША ИСТОРИЯ" И "КОНТАКТЫ" ----- */
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.love-grid img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+}
+
+.love-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.love-text .date {
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    color: #444;
+}
+
+.contacts {
+    margin-top: 20px;
+}
+
+.contact-item {
+    margin-top: 15px;
+}
+
+.contact-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #b30000;
+}
+
+.contact-phone {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
 /* ----- АДАПТИВНОСТЬ ----- */
 @media (max-width: 480px) {
     .container {
@@ -390,12 +432,6 @@ body {
     .event {
         margin-bottom: 22px;
         padding-left: 15px;
-    }
-    .event::before {
-        width: 10px;
-        height: 10px;
-        left: -4px;
-        top: 4px;
     }
     .timeline::before {
         left: 6px;
@@ -440,6 +476,9 @@ body {
     .question {
         font-size: 18px;
     }
+    .love-grid {
+        gap: 8px;
+    }
 }
 @media (min-width: 768px) {
     .container {
@@ -464,6 +503,7 @@ body {
 </head>
 <body>
 
+<!-- ПЕРВЫЙ БЛОК: ПРИВЕТСТВИЕ + КАЛЕНДАРЬ -->
 <div class="container fade-up">
     <div class="line-top"></div>
     <div class="small">наша любовь</div>
@@ -491,7 +531,18 @@ body {
     </div>
 </div>
 
-<!-- МЕСТО -->
+<!-- НОВЫЙ БЛОК: НАША ИСТОРИЯ (добавлен) -->
+<div class="container fade-up">
+    <div class="title">НАША ИСТОРИЯ</div>
+    <div class="love-grid">
+        <img src="1.jpg" alt="Фото истории 1">
+        <img src="2.jpg" alt="Фото истории 2">
+        <img src="3.jpg" alt="Фото истории 3">
+        <img src="4.jpg" alt="Фото истории 4">
+    </div>
+</div>
+
+<!-- МЕСТО ВСТРЕЧИ -->
 <div class="container fade-up">
     <div class="title">МЕСТО ВСТРЕЧИ</div>
     <div class="card">
@@ -504,7 +555,7 @@ body {
     <a href="#" class="button">ОТКРЫТЬ КАРТУ</a>
 </div>
 
-<!-- ПРОГРАММА ДНЯ -->
+<!-- ПРОГРАММА ДНЯ (кружочки удалены) -->
 <div class="program fade-up">
     <h2>ПЛАН ДНЯ</h2>
     <div class="timeline">
@@ -555,7 +606,6 @@ body {
             <img src="дресс-код.jpg" alt="Примеры нарядов">
         </div>
     </div>
-    <!-- Надпись про белое платье удалена по запросу -->
 </div>
 
 <!-- ТАЙМЕР -->
@@ -570,7 +620,7 @@ body {
     </div>
 </div>
 
-<!-- АНКЕТА -->
+<!-- АНКЕТА (RSVP) -->
 <div class="rsvp fade-up">
     <h2>ПОДТВЕРЖДЕНИЕ ПРИСУТСТВИЯ</h2>
     <p class="desc">
@@ -620,6 +670,20 @@ body {
     <textarea rows="3" class="wishes-input" placeholder="Будем благодарны за ваши пожелания, советы или просто добрые слова..."></textarea>
 
     <button class="submit-btn" id="submitBtn">ОТПРАВИТЬ</button>
+</div>
+
+<!-- НОВЫЙ БЛОК: КОНТАКТЫ (последний блок на странице) -->
+<div class="container fade-up">
+    <div class="title">КОНТАКТЫ</div>
+    <div class="text">
+        В день свадьбы мы будем немного заняты, поэтому по всем вопросам вы можете обратиться к нашему координатору:
+    </div>
+    <div class="contacts">
+        <div class="contact-item">
+            <div class="contact-name">Анна</div>
+            <div class="contact-phone">+7 999 123-45-67</div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -694,3 +758,4 @@ if (submitBtn) {
 </script>
 </body>
 </html>
+
