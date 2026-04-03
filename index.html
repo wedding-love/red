@@ -4,6 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Отключаем автоматическое преобразование номеров телефонов в ссылки -->
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
 <title>Свадебное приглашение | Артём & София</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -406,11 +409,21 @@ body {
     color: #b30000;
 }
 
+/* Убираем синий цвет и подчёркивание у номера телефона */
 .contact-phone {
     margin-top: 5px;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.5px;
+    color: #222;          /* чёрный цвет */
+    text-decoration: none; /* убираем подчёркивание */
+}
+
+/* Дополнительная защита на случай, если браузер всё же создаст ссылку */
+.contacts a,
+.contact-phone a {
+    color: #222 !important;
+    text-decoration: none !important;
 }
 
 /* ----- АДАПТИВНОСТЬ ----- */
@@ -539,6 +552,10 @@ body {
         <img src="2.jpg" alt="Фото истории 2">
         <img src="3.jpg" alt="Фото истории 3">
         <img src="4.jpg" alt="Фото истории 4">
+    </div>
+    <div class="love-text">
+        <div class="small">you and me</div>
+        <div class="date">02.07.2020</div>
     </div>
 </div>
 
@@ -681,6 +698,7 @@ body {
     <div class="contacts">
         <div class="contact-item">
             <div class="contact-name">Анна</div>
+            <!-- Номер телефона теперь гарантированно без синего цвета и подчёркивания -->
             <div class="contact-phone">+7 999 123-45-67</div>
         </div>
     </div>
@@ -758,4 +776,3 @@ if (submitBtn) {
 </script>
 </body>
 </html>
-
